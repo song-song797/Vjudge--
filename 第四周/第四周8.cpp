@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
-struct Snake{
+struct Snake {
     int head_pos;
     int len;
 };
@@ -18,7 +18,7 @@ signed main() {
     while (Q--) {
         int op;
         cin >> op;
-        if(op==1){
+        if (op == 1) {
             int l;
             cin >> l;
             Snake curr;
@@ -26,16 +26,14 @@ signed main() {
             curr.len = l;
             tail_pos += l;
             dq.push_back(curr);
-        }
-        if(op==2){
+        } else if (op == 2) {
             Snake curr = dq.front();
             dq.pop_front();
             offset += curr.len;
-        }
-        if(op==3){
+        } else if (op == 3) {
             int k;
             cin >> k;
-            cout << dq[k - 1].head_pos-offset << '\n';
+            cout << dq[k - 1].head_pos - offset << '\n';
         }
     }
     return 0;
