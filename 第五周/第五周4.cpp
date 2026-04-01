@@ -8,6 +8,10 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    // TODO: 实现题目逻辑
-
+    int N;
+    cin >> N;
+    vector<int> A(N + 1);
+    for (int i = 1; i <= N;i++){
+        cin >> A[i];
+    }
 }
