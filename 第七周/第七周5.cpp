@@ -21,10 +21,10 @@ int main() {
             }
             stk.pop();
             stk1.pop();
-            
-        }
-        if (S[i] == '(' || S[i] == ')') {
-            stk1.push(S[i]);
+        } else {
+            if (S[i] == '(' || S[i] == ')') {
+                stk1.push(S[i]);
+            }
         }
     }
     while (!stk.empty()) {
