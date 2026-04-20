@@ -10,26 +10,23 @@ int main() {
     int N;
     string S;
     cin >> N >> S;
-    stack<char> stk;
-    stack<char> stk1;
+    string stk;
+    string stk1;
     char last = '#';
     for (int i = 0; i < N; i++) {
-        stk.push(S[i]);
-        if (S[i] == ')' && stk1.top() == '(') {
-            while (!stk.empty() && stk.top() != '(') {
-                stk.pop();
+        stk.push_back(S[i]);
+        if (S[i] == ')' && !stk1.empty() && stk1[stk1.size() - 1] == '(') {
+            while (!stk.empty() && stk[stk.size() - 1] != '(') {
+                stk.pop_back();
             }
-            stk.pop();
-            stk1.pop();
+            stk.pop_back();
+            stk1.pop_back();
         } else {
             if (S[i] == '(' || S[i] == ')') {
-                stk1.push(S[i]);
+                stk1.push_back(S[i]);
             }
         }
     }
-    while (!stk.empty()) {
-        cout << stk.top();
-        stk.pop();
-    }
+    cout << stk << '\n';
     return 0;
 }
